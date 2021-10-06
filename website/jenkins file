@@ -15,7 +15,7 @@ pipeline
 		{
 			steps
 			{
-				sh 'ant compile'
+				sh 'mvn compile'
 			}
 		}
 
@@ -23,7 +23,7 @@ pipeline
 		{
 			steps
 			{
-				sh 'ant test'
+				sh 'mvn test'
 			}
 		}
 
@@ -31,6 +31,7 @@ pipeline
 		{
 			steps
 			{
-				sh 'ant package'
+				sh 'mvn package'
 			}
+		}
 		}

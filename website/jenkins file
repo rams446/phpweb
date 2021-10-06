@@ -1,0 +1,36 @@
+pipeline
+{
+	agent any
+	stages
+	{
+		stage('Checkout')
+		{
+			steps
+			{
+				git 'https://github.com/rams446/phpweb.git'
+			}
+		}
+		
+		stage('Compile')
+		{
+			steps
+			{
+				sh 'ant compile'
+			}
+		}
+
+		stage('Test')
+		{
+			steps
+			{
+				sh 'ant test'
+			}
+		}
+
+		stage('Build')
+		{
+			steps
+			{
+				sh 'ant package'
+			}
+		}
